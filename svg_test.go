@@ -551,13 +551,13 @@ func TestFeatureProperties(t *testing.T) {
 }
 
 func TestExample(t *testing.T) {
-	exampleFile := path.Join("..", "..", "fixtures", "example.json")
+	exampleFile := path.Join("fixtures", "example.json")
 	geojson, err := ioutil.ReadFile(exampleFile)
 	if err != nil {
 		t.Fatalf("unexpected error %v", err)
 	}
 
-	svgFile := path.Join("..", "..", "fixtures", "example.svg")
+	svgFile := path.Join("fixtures", "example.svg")
 	want, err := ioutil.ReadFile(svgFile)
 	if err != nil {
 		t.Fatalf("unexpected error %v", err)
