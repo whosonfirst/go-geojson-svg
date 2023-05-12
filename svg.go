@@ -8,7 +8,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	_ "log"
 	"math"
 	"regexp"
 	"sort"

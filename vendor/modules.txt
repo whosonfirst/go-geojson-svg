@@ -1,7 +1,7 @@
 # github.com/paulmach/go.geojson v1.4.0
 ## explicit
 github.com/paulmach/go.geojson
-# github.com/paulmach/orb v0.7.1
-## explicit
+# github.com/paulmach/orb v0.9.2
+## explicit; go 1.15
 github.com/paulmach/orb
 github.com/paulmach/orb/project

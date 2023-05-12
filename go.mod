@@ -1,8 +1,8 @@
 module github.com/whosonfirst/go-geojson-svg
 
-go 1.16
+go 1.18
 
 require (
 	github.com/paulmach/go.geojson v1.4.0
-	github.com/paulmach/orb v0.7.1
+	github.com/paulmach/orb v0.9.2
 )
