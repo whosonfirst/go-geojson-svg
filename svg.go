@@ -18,6 +18,8 @@ import (
 	"github.com/paulmach/orb/project"
 )
 
+var re_has_r = regexp.MustCompile(`r="\d+"`)
+
 // TODO release
 
 type scaleFunc func(float64, float64) (float64, float64)
@@ -260,8 +262,13 @@ func collect(g *geojson.Geometry) (ps [][]float64) {
 
 func drawPoint(sf scaleFunc, w io.Writer, p []float64, attributes string) {
 	x, y := sf(p[0], p[1])
-	// fmt.Fprintf(w, `<circle cx="%f" cy="%f" r="1"%s/>`, x, y, attributes)
-	fmt.Fprintf(w, `<circle cx="%f" cy="%f" %s/>`, x, y, attributes)	
+
+	if !re_has_r.MatchString(attributes){
+		fmt.Fprintf(w, `<circle cx="%f" cy="%f" r="1"%s/>`, x, y, attributes)
+		return
+	}
+	
+	fmt.Fprintf(w, `<circle cx="%f" cy="%f"%s/>`, x, y, attributes)	
 }
 
 func drawMultiPoint(sf scaleFunc, w io.Writer, ps [][]float64, attributes string) {
